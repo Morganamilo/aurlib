@@ -5,15 +5,17 @@ import (
 )
 
 type Handle struct {
-	AURURL string
-	CacheDir string
+	AURURL    string
+	CacheDir  string
+	PatchDir  string
 	GitHandle git.Handle
 }
 
-func MakeHandle(cacheDir string) Handle {
+func MakeHandle(cacheDir string, patchDir string) Handle {
 	handle := Handle{
-		AURURL: "https://aur.archlinux.org",
-		CacheDir: cacheDir,
+		AURURL:    "https://aur.archlinux.org",
+		CacheDir:  cacheDir,
+		PatchDir:  patchDir,
 		GitHandle: git.MakeHandle(),
 	}
 
